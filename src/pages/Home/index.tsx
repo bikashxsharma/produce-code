@@ -33,6 +33,7 @@ const Home = () => {
 
 	useEffect(() => {
 		if (search !== '') {
+			document.title = search
 			const _items = items.filter(
 				(obj) =>
 					obj.title
@@ -43,6 +44,7 @@ const Home = () => {
 		}
 		if (search === '') {
 			setFilteredItems(items)
+			document.title = 'PLU codes'
 		}
 	}, [search])
 
