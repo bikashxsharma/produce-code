@@ -1,0 +1,61 @@
+// reset
+@import '_reset.scss';
+:root {
+	font-size: 8px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+// functions
+@function weight($weight-name) {
+	@return map-get(
+		$font-weights,
+		$weight-name
+	);
+}
+$primary: #36b16c;
+$primaryHover: #1c874b;
+$white: #ffffff;
+$whiteLight: #fffcfc;
+
+$black: #464141;
+$background: #ffffff;
+$backgroundGrey: #f6f6f6;
+$grey: #a2a4aa;
+
+$maxWidth: 1100px;
+
+$font-family: 'Montserrat', sans-serif;
+$font-weights: (
+	'regular': 400,
+	'medium': 500,
+	'bold': 700,
+);
+body {
+	background-color: $background;
+}
+
+h1 {
+	font-family: $font-family;
+	font-size: 3rem;
+	font-weight: weight(medium);
+	letter-spacing: 2%;
+	line-height: 30px;
+	color: $black;
+}
+
+h2 {
+	font-family: $font-family;
+	font-size: 2.5rem;
+	font-weight: weight(medium);
+	letter-spacing: 2%;
+	line-height: 24px;
+	color: $black;
+}
+p {
+	font-family: $font-family;
+	font-size: 2rem;
+	font-weight: weight(regular);
+	letter-spacing: 2%;
+	line-height: 20px;
+	color: $grey;
+}
