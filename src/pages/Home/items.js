@@ -39,5 +39,41 @@ export const items = [
     title: 'eggplant',
     code: '4081',
   },
+  {
+    title: 'Granny smith',
+    code: '4017',
+  },
+  {
+    title: 'honey crisp',
+    code: '3283',
+  },
+  {
+    title: 'pepper',
+    code: '4690',
+  },
+  {
+    title: 'potato',
+    code: '4727',
+  },
+  {
+    title: 'tomato',
+    code: '4664',
+  },
+  {
+    title: 'mushroom',
+    code: '4649',
+  },
+  {
+    title: 'potato red',
+    code: '4073',
+  },
+  {
+    title: 'cucumber',
+    code: '4593',
+  },
+  {
+    title: 'carrot',
+    code: '4620',
+  },
 
 ]
