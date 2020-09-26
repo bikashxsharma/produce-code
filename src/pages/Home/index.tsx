@@ -22,7 +22,9 @@ const Home = () => {
 	] = useState(items)
 
 	const updateSearch = (e: any) => {
-		setSearch(e.target.value)
+		setSearch(
+			e.target.value.toLowerCase(),
+		)
 		console.log(e.target.value)
 	}
 	const clearSearch = () => {
