@@ -32,9 +32,13 @@ const Home = () => {
 	useEffect(() => {
 		if (search !== '') {
 			const _items = items.filter(
-				(obj) => obj.title === search,
+				(obj) =>
+					obj.title.includes(search),
 			)
 			setFilteredItems(_items)
+		}
+		if (search === '') {
+			setFilteredItems(items)
 		}
 	}, [search])
 
