@@ -51,7 +51,7 @@
 
 .categories-cards {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .item-cards-big {
@@ -61,7 +61,7 @@
 	}
 	&__cards {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		flex-wrap: wrap;
 	}
 }

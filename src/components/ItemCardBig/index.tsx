@@ -4,13 +4,15 @@ import './style.scss'
 
 type ItemCardBigProps = {
 	title: string
-	code: string
+	code: number
 	picture?: string
+	variety?: string
 }
 const ItemCardBig: React.FC<ItemCardBigProps> = ({
 	title,
 	code,
 	picture,
+	variety,
 }) => {
 	return (
 		<div className='item-card-big'>
@@ -23,6 +25,9 @@ const ItemCardBig: React.FC<ItemCardBigProps> = ({
 					alt='banana'
 				/>
 			</div>
+			<p className='item-card-big__variety'>
+				{variety}
+			</p>
 			<p className='item-card-big__title'>
 				{title}
 			</p>

@@ -35,7 +35,9 @@ const Home = () => {
 		if (search !== '') {
 			const _items = items.filter(
 				(obj) =>
-					obj.title.includes(search),
+					obj.title
+						.toLowerCase()
+						.includes(search),
 			)
 			setFilteredItems(_items)
 		}
@@ -86,8 +88,8 @@ const Home = () => {
 					{filteredItems.map((item) => (
 						<div key={item.code}>
 							<ItemCardBig
-								title={item.title}
-								code={item.code}
+								title={item.title.toLowerCase()}
+								code={Number(item.code)}
 							/>
 						</div>
 					))}
