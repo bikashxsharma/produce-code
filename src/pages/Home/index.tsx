@@ -62,15 +62,24 @@ const Home = () => {
 					/>
 				)}
 			</div>
+
 			{/** Category cards //TODO make seperate component sliding */}
-			<div className='categories-cards'>
-				<CategoryCard title='fruits' />
-				<CategoryCard title='Bread' />
-				<CategoryCard title='Veggies' />
-			</div>
+			{search === '' && (
+				<>
+					<div className='categories-cards'>
+						<CategoryCard title='fruits' />
+						<CategoryCard title='Bread' />
+						<CategoryCard title='Veggies' />
+					</div>
+				</>
+			)}
+
 			{/** Cards component //TODO make seperate component */}
 			<div className='item-cards-big'>
-				<h2>Fruits</h2>
+				{search === '' && (
+					<h2>Fruits</h2>
+				)}
+
 				<div className='item-cards-big__cards'>
 					{filteredItems.map((item) => (
 						<div key={item.code}>
