@@ -1,5 +1,9 @@
-import React from 'react'
+import React, {
+	useState,
+	useEffect,
+} from 'react'
 import SearchIcon from '@material-ui/icons/Search'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff'
 
 import Header from 'components/Header'
 import CategoryCard from 'components/CategoryCard'
@@ -9,6 +13,31 @@ import { items } from './items'
 import './style.scss'
 
 const Home = () => {
+	const [search, setSearch] = useState(
+		'',
+	)
+	const [
+		filteredItems,
+		setFilteredItems,
+	] = useState(items)
+
+	const updateSearch = (e: any) => {
+		setSearch(e.target.value)
+		console.log(e.target.value)
+	}
+	const clearSearch = () => {
+		setSearch('')
+	}
+
+	useEffect(() => {
+		if (search !== '') {
+			const _items = items.filter(
+				(obj) => obj.title === search,
+			)
+			setFilteredItems(_items)
+		}
+	}, [search])
+
 	return (
 		<div className='home'>
 			<Header />
@@ -19,7 +48,15 @@ const Home = () => {
 				<input
 					type='search'
 					placeholder='Search'
+					value={search}
+					onChange={updateSearch}
 				/>
+				{search !== '' && (
+					<HighlightOffIcon
+						onClick={clearSearch}
+						className='search-input__clear'
+					/>
+				)}
 			</div>
 			{/** Category cards //TODO make seperate component sliding */}
 			<div className='categories-cards'>
@@ -31,11 +68,13 @@ const Home = () => {
 			<div className='item-cards-big'>
 				<h2>Fruits</h2>
 				<div className='item-cards-big__cards'>
-					{items.map((item) => (
-						<ItemCardBig
-							title={item.title}
-							code={item.code}
-						/>
+					{filteredItems.map((item) => (
+						<div key={item.code}>
+							<ItemCardBig
+								title={item.title}
+								code={item.code}
+							/>
+						</div>
 					))}
 				</div>
 			</div>
